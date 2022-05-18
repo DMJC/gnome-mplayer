@@ -20,7 +20,7 @@
 #define GLIB2_24_ENABLED 1
 
 /* Define to 1 if you have gpod support */
-#define GPOD_ENABLED 1
+/* #undef GPOD_ENABLED */
 
 /* Define to 1 if you have GTK 2.12 or higher */
 #define GTK2_12_ENABLED 1
@@ -74,10 +74,10 @@
 #define HAVE_MNTENT_H 1
 
 /* defined if you build the nautilus plugin */
-#define HAVE_NAUTILUS 1
+/* #undef HAVE_NAUTILUS */
 
 /* defined if you build the nemo plugin */
-#define HAVE_NEMO 1
+/* #undef HAVE_NEMO */
 
 /* Define to 1 if you have PulseAudio development packages */
 #define HAVE_PULSEAUDIO 1
@@ -113,10 +113,10 @@
 #define HAVE_UNISTD_H 1
 
 /* When defined database access is enabled */
-#define LIBGDA_ENABLED 1
+/* #undef LIBGDA_ENABLED */
 
 /* Define to 1 if you have musicbrainz3 support */
-#define MUSICBRAINZ_ENABLED 1
+/* #undef MUSICBRAINZ_ENABLED */
 
 /* Define to 1 if you have NOTIFY support */
 #define NOTIFY0_7_ENABLED 1
