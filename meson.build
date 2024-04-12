@@ -237,17 +237,17 @@ configure_file(
 sources = [
 #	  'config.h',
           'src/gui.c',
-          'src/gui.h',
+#          'src/gui.h',
           'src/playlist.c',
-          'src/playlist.h',
+#          'src/playlist.h',
           'src/support.c',
-          'src/support.h',
-          'src/mntent_compat.h',
+#          'src/support.h',
+#          'src/mntent_compat.h',
           'src/mntent_compat.c',
           'src/main.c',
           'src/dbus-interface.c',
-          'src/dbus-interface.h',
-          'src/common.h',
+#          'src/dbus-interface.h',
+#          'src/common.h',
 #        'src/../pixmaps/gnome_mplayer.xpm',
 #        'src/../pixmaps/media-playback-pause.xpm',
 #        'src/../pixmaps/media-playback-start.xpm',
@@ -259,28 +259,21 @@ sources = [
 #        'src/../pixmaps/view-fullscreen.xpm',
           'src/langlist.h',
           'src/mpris-interface.c',
-          'src/mpris-interface.h',
+#          'src/mpris-interface.h',
           'src/database.c',
-          'src/database.h'
+#          'src/database.h'
 ]
 
-headers = [
-	  'src/mntent_compat.h',
-	  'src/database.h',
-	  'src/mpris-interface.h',
-	  'src/support.h',
-	  'src/gui.h',
-	  'src/common.h',
-	  'src/property_page_common.h',
-	  'src/mime_types.h',
-	  'src/playlist.h',
-	  'src/dbus-interface.h',
-	  'src/langlist.h'
+bin_dir = join_paths('prefix', 'bin')
+executable('gnome-mplayer', sources, dependencies: [math, x11, gtk, gmlib, gmtk, gio, dbus, dbus_glib1, glib, alsa, pulse, notify, notify_7, gpod7, musicbrainz5, xscrnsaver, libgda5], install_dir: bin_dir)
+
+schema_data = [
+  'apps.gecko-mediaplayer.preferences.gschema.xml',
+  'apps.gnome-mplayer.preferences.gschema.xml',
 ]
 
-executable('gnome-mplayer', sources, headers,
-	   dependencies: [alsa, x11, gtk, glib, gmlib, gmtk, gio, libgda5, dbus, dbus_glib1, musicbrainz5, xscrnsaver, pulse, notify, notify_7, math])
-
+schema_dir = join_paths(get_option('prefix'), get_option('datadir'), 'glib-2.0', 'schemas')
+install_data(schema_data, install_dir: schema_dir)
 
 #glib2,
 #glib2_24,

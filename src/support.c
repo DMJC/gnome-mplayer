@@ -24,7 +24,7 @@
 
 #include "support.h"
 
-gboolean detect_playlist(gchar * uri)
+gboolean detect_playlist(gchar *uri)
 {
 
     gboolean playlist = FALSE;
@@ -201,7 +201,7 @@ gboolean detect_playlist(gchar * uri)
     return playlist;
 }
 
-gboolean parse_playlist(gchar * uri)
+gboolean parse_playlist(gchar *uri)
 {
     gboolean ret = FALSE;
     GtkTreeViewColumn *column;
@@ -275,7 +275,7 @@ gboolean parse_playlist(gchar * uri)
 }
 
 // parse_basic covers .pls, .m3u, mxu and reference playlist types 
-gboolean parse_basic(gchar * uri)
+gboolean parse_basic(gchar *uri)
 {
 
     if (device_name(uri))
@@ -444,7 +444,7 @@ gboolean parse_basic(gchar * uri)
     return ret;
 }
 
-gboolean parse_ram(gchar * filename)
+gboolean parse_ram(gchar *filename)
 {
 
     gint ac = 0;
@@ -486,7 +486,7 @@ gboolean parse_ram(gchar * filename)
     return ret;
 }
 
-gboolean parse_asx(gchar * uri)
+gboolean parse_asx(gchar *uri)
 {
     gboolean ret = FALSE;
 
@@ -540,7 +540,7 @@ gboolean parse_asx(gchar * uri)
     return ret;
 }
 
-gboolean parse_cdda(gchar * filename)
+gboolean parse_cdda(gchar *filename)
 {
 
     GError *error;
@@ -708,7 +708,7 @@ gboolean parse_cdda(gchar * filename)
 }
 
 // This function pulls the playlist for dvd and dvdnav
-gboolean parse_dvd(gchar * filename)
+gboolean parse_dvd(gchar *filename)
 {
 
     GError *error;
@@ -805,7 +805,7 @@ gboolean parse_dvd(gchar * filename)
 }
 
 // This function pulls the playlist for dvd and dvdnav
-gboolean parse_vcd(gchar * filename)
+gboolean parse_vcd(gchar *filename)
 {
 
     GError *error;
@@ -895,7 +895,7 @@ gboolean parse_vcd(gchar * filename)
     return ret;
 }
 
-gboolean streaming_media(gchar * uri)
+gboolean streaming_media(gchar *uri)
 {
     gboolean ret;
     gchar *local_file = NULL;
@@ -956,7 +956,7 @@ gboolean streaming_media(gchar * uri)
     return ret;
 }
 
-gboolean device_name(gchar * filename)
+gboolean device_name(gchar *filename)
 {
     gboolean ret;
 
@@ -987,7 +987,7 @@ gboolean device_name(gchar * filename)
     return ret;
 }
 
-gchar *metadata_to_utf8(gchar * string)
+gchar *metadata_to_utf8(gchar *string)
 {
     if (metadata_codepage != NULL && strlen(metadata_codepage) > 1) {
         // zh_TW usually use BIG5 on tags, if the file is from Windows
@@ -1020,7 +1020,7 @@ void retrieve_metadata(gpointer data, gpointer user_data)
     gm_log(FALSE, G_LOG_LEVEL_DEBUG, "unlocked retrieve_mutex");
 }
 
-MetaData *get_basic_metadata(gchar * uri)
+MetaData *get_basic_metadata(gchar *uri)
 {
     gchar *title = NULL;
     gchar *artist = NULL;
@@ -1154,7 +1154,7 @@ MetaData *get_basic_metadata(gchar * uri)
     return ret;
 }
 
-void free_metadata(MetaData * data)
+void free_metadata(MetaData *data)
 {
 
     if (data == NULL)
@@ -1192,7 +1192,7 @@ void free_metadata(MetaData * data)
 }
 
 
-MetaData *get_metadata(gchar * uri)
+MetaData *get_metadata(gchar *uri)
 {
     gchar *title = NULL;
     gchar *artist = NULL;
@@ -1509,7 +1509,7 @@ MetaData *get_metadata(gchar * uri)
     return ret;
 }
 
-gint get_bitrate(gchar * name)
+gint get_bitrate(gchar *name)
 {
 
     GError *error;
@@ -1669,7 +1669,7 @@ gint get_bitrate(gchar * name)
 }
 
 
-gboolean add_item_to_playlist(const gchar * uri, gboolean playlist)
+gboolean add_item_to_playlist(const gchar *uri, gboolean playlist)
 {
     GtkTreeIter localiter;
     gchar *local_uri;
@@ -1797,7 +1797,7 @@ gboolean add_item_to_playlist(const gchar * uri, gboolean playlist)
 
 }
 
-GtkTreeIter *find_iter_by_uri(const gchar * uri)
+GtkTreeIter *find_iter_by_uri(const gchar *uri)
 {
     GtkTreeIter *iter = NULL;
     gchar *localuri;
@@ -1818,7 +1818,7 @@ GtkTreeIter *find_iter_by_uri(const gchar * uri)
     return iter;
 }
 
-gboolean is_first_item_in_playlist(GtkTreeIter * iter)
+gboolean is_first_item_in_playlist(GtkTreeIter *iter)
 {
     gint i;
 
@@ -1873,7 +1873,7 @@ gint find_closest_to_x_in_playlist(gint x, gint delta)
     return k;
 }
 
-gboolean prev_item_in_playlist(GtkTreeIter * iter)
+gboolean prev_item_in_playlist(GtkTreeIter *iter)
 {
     gint i, j, k;
 
@@ -1899,7 +1899,7 @@ gboolean prev_item_in_playlist(GtkTreeIter * iter)
 }
 
 
-gboolean next_item_in_playlist(GtkTreeIter * iter)
+gboolean next_item_in_playlist(GtkTreeIter *iter)
 {
     gint i, j, k;
 
@@ -1930,7 +1930,7 @@ gboolean next_item_in_playlist(GtkTreeIter * iter)
     }
 }
 
-gboolean first_item_in_playlist(GtkListStore * playliststore, GtkTreeIter * iter)
+gboolean first_item_in_playlist(GtkListStore *playliststore, GtkTreeIter *iter)
 {
 
     gint j;
@@ -1953,7 +1953,7 @@ gboolean first_item_in_playlist(GtkListStore * playliststore, GtkTreeIter * iter
 }
 
 
-gboolean save_playlist_pls(gchar * uri)
+gboolean save_playlist_pls(gchar *uri)
 {
     gchar *itemname;
     GtkTreeIter localiter;
@@ -2033,7 +2033,7 @@ gboolean save_playlist_pls(gchar * uri)
 }
 
 
-gboolean save_playlist_m3u(gchar * uri)
+gboolean save_playlist_m3u(gchar *uri)
 {
     gchar *itemname;
     GtkTreeIter localiter;
@@ -2103,7 +2103,7 @@ gboolean save_playlist_m3u(gchar * uri)
 #endif
 }
 
-void randomize_playlist(GtkListStore * store)
+void randomize_playlist(GtkListStore *store)
 {
 
     GtkTreeIter a;
@@ -2156,7 +2156,7 @@ void randomize_playlist(GtkListStore * store)
     g_rand_free(rand);
 }
 
-void reset_playlist_order(GtkListStore * store)
+void reset_playlist_order(GtkListStore *store)
 {
 
     GtkTreeIter a;
@@ -2234,7 +2234,7 @@ void cache_callback(goffset current_num_bytes, goffset total_num_bytes, gpointer
 
 }
 
-void ready_callback(GObject * source_object, GAsyncResult * res, gpointer data)
+void ready_callback(GObject *source_object, GAsyncResult *res, gpointer data)
 {
     g_object_unref(idledata->tmp);
     g_object_unref(idledata->src);
@@ -2244,7 +2244,7 @@ void ready_callback(GObject * source_object, GAsyncResult * res, gpointer data)
 #endif
 
 
-gchar *get_localfile_from_uri(gchar * uri)
+gchar *get_localfile_from_uri(gchar *uri)
 {
     gchar *localfile;
 #ifdef GIO_ENABLED
@@ -2294,7 +2294,7 @@ gchar *get_localfile_from_uri(gchar * uri)
     return localfile;
 }
 
-gboolean is_uri_dir(gchar * uri)
+gboolean is_uri_dir(gchar *uri)
 {
     gboolean result = FALSE;
 
@@ -2328,7 +2328,7 @@ gboolean is_uri_dir(gchar * uri)
     return result;
 }
 
-gboolean uri_exists(gchar * uri)
+gboolean uri_exists(gchar *uri)
 {
     gboolean result = FALSE;
 
@@ -2391,7 +2391,7 @@ gchar *find_gpod_mount_point()
     return ret;
 }
 
-gboolean gpod_load_tracks(gchar * mount_point)
+gboolean gpod_load_tracks(gchar *mount_point)
 {
     Itdb_iTunesDB *db;
     Itdb_Artwork *artwork;
@@ -2485,7 +2485,7 @@ gboolean gpod_load_tracks(gchar * mount_point)
 #endif
 
 #ifdef HAVE_MUSICBRAINZ
-gchar *get_cover_art_url(gchar * artist, gchar * title, gchar * album)
+gchar *get_cover_art_url(gchar *artist, gchar *title, gchar *album)
 {
     int i;
     MbWebService mb;
@@ -2804,7 +2804,7 @@ gpointer get_cover_art(gpointer data)
     return NULL;
 }
 
-gchar *get_cover_art_url(gchar * artist, gchar * title, gchar * album)
+gchar *get_cover_art_url(gchar *artist, gchar *title, gchar *album)
 {
     gm_log(verbose, G_LOG_LEVEL_DEBUG, "Running without musicbrainz support, unable to fetch url");
     return NULL;
@@ -2878,7 +2878,7 @@ gboolean detect_volume_option()
     return ret;
 }
 
-gchar *switch_protocol(const gchar * uri, gchar * new_protocol)
+gchar *switch_protocol(const gchar *uri, gchar *new_protocol)
 {
     gchar *p;
 

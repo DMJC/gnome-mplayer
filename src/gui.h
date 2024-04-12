@@ -23,6 +23,7 @@
  */
 //#include <X11/Xlib.h>
 
+#pragma once
 #ifdef HAVE_CONFIG_H
 #include <config.h>
 #endif
@@ -44,44 +45,44 @@
 
 #include "playlist.h"
 
-GtkWidget *window;
+static GtkWidget *window;
 
-GtkMenuItem *menuitem_edit_random;
-GtkMenuItem *menuitem_edit_loop;
-GtkMenuItem *menuitem_edit_play_single;
-GtkWidget *repeat;
-GtkWidget *shuffle;
-GtkMenuItem *menuitem_edit_select_audio_lang;
-GtkMenuItem *menuitem_edit_select_sub_lang;
-GtkWidget *tracks;
-GtkWidget *subtitles;
+static GtkMenuItem *menuitem_edit_random;
+static GtkMenuItem *menuitem_edit_loop;
+static GtkMenuItem *menuitem_edit_play_single;
+static GtkWidget *repeat;
+static GtkWidget *shuffle;
+static GtkMenuItem *menuitem_edit_select_audio_lang;
+static GtkMenuItem *menuitem_edit_select_sub_lang;
+static GtkWidget *tracks;
+static GtkWidget *subtitles;
 
-GtkMenuItem *menuitem_view_info;
-GtkMenuItem *menuitem_view_playlist;
+static GtkMenuItem *menuitem_view_info;
+static GtkMenuItem *menuitem_view_playlist;
 
-GtkMenuItem *menuitem_prev;
-GtkMenuItem *menuitem_next;
+static GtkMenuItem *menuitem_prev;
+static GtkMenuItem *menuitem_next;
 
-GtkWidget *pane;
-GtkWidget *hbox;
+static GtkWidget *pane;
+static GtkWidget *hbox;
 
-GtkWidget *media;
-GtkWidget *cover_art;
-GtkWidget *audio_meter;
+static GtkWidget *media;
+static GtkWidget *cover_art;
+static GtkWidget *audio_meter;
 
-GtkWidget *details_table;
+static GtkWidget *details_table;
 
-GtkWidget *play_event_box;
+static GtkWidget *play_event_box;
 
-GtkWidget *prev_event_box;
-GtkWidget *next_event_box;
-GtkWidget *menu_event_box;
-GtkWidget *fs_event_box;
+static GtkWidget *prev_event_box;
+static GtkWidget *next_event_box;
+static GtkWidget *menu_event_box;
+static GtkWidget *fs_event_box;
 
-GmtkMediaTracker *tracker;
-GtkWidget *vol_slider;
+static GmtkMediaTracker *tracker;
+static GtkWidget *vol_slider;
 
-GtkWidget *conf_volume_label;
+static GtkWidget *conf_volume_label;
 
 #ifdef GTK2_12_ENABLED
 #else
@@ -89,11 +90,11 @@ GtkTooltips *tooltip;
 #endif
 
 // Playlist container
-GtkWidget *plvbox;
-GSList *lang_group;
-GSList *audio_group;
+static GtkWidget *plvbox;
+static GSList *lang_group;
+static GSList *audio_group;
 
-GtkAccelGroup *accel_group;
+static GtkAccelGroup *accel_group;
 
 gboolean popup_handler(GtkWidget * widget, GdkEvent * event, void *data);
 gboolean delete_callback(GtkWidget * widget, GdkEvent * event, void *data);

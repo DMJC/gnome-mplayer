@@ -41,7 +41,7 @@
 
 static GType pp_type = 0;
 
-static GList *gnome_mplayer_properties_get_pages(NautilusPropertyPageProvider * provider, GList * files)
+static GList *gnome_mplayer_properties_get_pages(NautilusPropertyPageProvider *provider, GList *files)
 {
     GList *pages = NULL;
     NautilusFileInfo *file;
@@ -80,12 +80,12 @@ static GList *gnome_mplayer_properties_get_pages(NautilusPropertyPageProvider * 
     return pages;
 }
 
-static void property_page_provider_iface_init(NautilusPropertyPageProviderIface * iface)
+static void property_page_provider_iface_init(NautilusPropertyPageProviderIface *iface)
 {
     iface->get_pages = gnome_mplayer_properties_get_pages;
 }
 
-static void gnome_mplayer_properties_plugin_register_type(GTypeModule * module)
+static void gnome_mplayer_properties_plugin_register_type(GTypeModule *module)
 {
     const GTypeInfo info = {
         sizeof(GObjectClass),
@@ -113,7 +113,7 @@ static void gnome_mplayer_properties_plugin_register_type(GTypeModule * module)
 
 
 /* --- extension interface --- */
-void nautilus_module_initialize(GTypeModule * module)
+void nautilus_module_initialize(GTypeModule *module)
 {
     GmPrefStore *gm_store;
 
@@ -139,7 +139,7 @@ void nautilus_module_shutdown(void)
 {
 }
 
-void nautilus_module_list_types(const GType ** types, int *num_types)
+void nautilus_module_list_types(const GType **types, int *num_types)
 {
     static GType type_list[1];
 

@@ -1,3 +1,4 @@
+#pragma once
 /* -*- Mode: C; indent-tabs-mode: t; c-basic-offset: 4; tab-width: 4 -*- */
 /*
  * playlist.h
@@ -29,8 +30,8 @@
 #include <glib.h>
 #include <glib/gstdio.h>
 
-GtkWidget *plclose;
-gint window_width, window_height;
+static GtkWidget *plclose;
+static gint window_width, window_height;
 
 void update_gui();
 void menuitem_view_playlist_callback(GtkMenuItem * menuitem, void *data);

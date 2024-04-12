@@ -63,7 +63,7 @@ void getmntent_addopt(char **c, const char *s)
     *c += i;
 }
 
-struct mntent *getmntent(FILE * filep)
+struct mntent *getmntent(FILE *filep)
 {
 #ifdef HAVE_SYS_MOUNT_H
     char *c = mntent_global_opts + 2;
@@ -138,7 +138,7 @@ struct mntent *getmntent(FILE * filep)
 #endif
 }
 
-int endmntent(FILE * filep)
+int endmntent(FILE *filep)
 {
     return 0;
 }

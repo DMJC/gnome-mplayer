@@ -24,7 +24,7 @@
 
 #ifdef LIBGDA_ENABLED
 
-gchar *escape_sql(const gchar * input)
+gchar *escape_sql(const gchar *input)
 {
     gchar *local;
     gchar *pos;
@@ -86,12 +86,12 @@ GdaConnection *open_db_connection()
     return conn;
 }
 
-void close_db_connection(GdaConnection * conn)
+void close_db_connection(GdaConnection *conn)
 {
     gda_connection_close(conn);
 }
 
-void create_tables(GdaConnection * conn)
+void create_tables(GdaConnection *conn)
 {
     run_sql_non_select(conn, "create table if not exists media_entries ("
                        "uri string not null primary key, "
@@ -105,13 +105,13 @@ void create_tables(GdaConnection * conn)
                        "video_width int, " "video_height int, " "length real, " "resume boolean, " "position real)");
 }
 
-void delete_tables(GdaConnection * conn)
+void delete_tables(GdaConnection *conn)
 {
     run_sql_non_select(conn, "drop table if exists media_entries");
 }
 
 
-void run_sql_non_select(GdaConnection * conn, const gchar * sql)
+void run_sql_non_select(GdaConnection *conn, const gchar *sql)
 {
     GdaStatement *stmt;
     GError *error = NULL;
@@ -130,7 +130,7 @@ void run_sql_non_select(GdaConnection * conn, const gchar * sql)
     g_object_unref(stmt);
 }
 
-MetaData *get_db_metadata(GdaConnection * conn, const gchar * uri)
+MetaData *get_db_metadata(GdaConnection *conn, const gchar *uri)
 {
     MetaData *ret = NULL;
     GdaSqlParser *parser;
@@ -248,7 +248,7 @@ MetaData *get_db_metadata(GdaConnection * conn, const gchar * uri)
     return ret;
 }
 
-gboolean is_uri_in_db_resumable(GdaConnection * conn, const gchar * uri)
+gboolean is_uri_in_db_resumable(GdaConnection *conn, const gchar *uri)
 {
     GdaSqlParser *parser;
     GdaStatement *stmt;
@@ -300,7 +300,7 @@ gboolean is_uri_in_db_resumable(GdaConnection * conn, const gchar * uri)
     return ret;
 }
 
-void insert_update_db_metadata(GdaConnection * conn, const gchar * uri, const MetaData * data)
+void insert_update_db_metadata(GdaConnection *conn, const gchar *uri, const MetaData *data)
 {
     gchar *remove = NULL;
     gchar *localuri;
@@ -426,7 +426,7 @@ void insert_update_db_metadata(GdaConnection * conn, const gchar * uri, const Me
     gda_value_free(resume);
 }
 
-void mark_uri_in_db_as_resumable(GdaConnection * conn, const gchar * uri, gboolean resume, gdouble position)
+void mark_uri_in_db_as_resumable(GdaConnection *conn, const gchar *uri, gboolean resume, gdouble position)
 {
     gchar *localuri;
     GValue *uri_value;

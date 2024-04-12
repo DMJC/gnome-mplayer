@@ -46,7 +46,7 @@ static GType pp_type = 0;
 
 
 
-static GList *gnome_mplayer_properties_get_pages(NemoPropertyPageProvider * provider, GList * files)
+static GList *gnome_mplayer_properties_get_pages(NemoPropertyPageProvider *provider, GList *files)
 {
     GList *pages = NULL;
     NemoFileInfo *file;
@@ -85,12 +85,12 @@ static GList *gnome_mplayer_properties_get_pages(NemoPropertyPageProvider * prov
     return pages;
 }
 
-static void property_page_provider_iface_init(NemoPropertyPageProviderIface * iface)
+static void property_page_provider_iface_init(NemoPropertyPageProviderIface *iface)
 {
     iface->get_pages = gnome_mplayer_properties_get_pages;
 }
 
-static void gnome_mplayer_properties_plugin_register_type(GTypeModule * module)
+static void gnome_mplayer_properties_plugin_register_type(GTypeModule *module)
 {
     const GTypeInfo info = {
         sizeof(GObjectClass),
@@ -117,7 +117,7 @@ static void gnome_mplayer_properties_plugin_register_type(GTypeModule * module)
 
 
 /* --- extension interface --- */
-void nemo_module_initialize(GTypeModule * module)
+void nemo_module_initialize(GTypeModule *module)
 {
     GmPrefStore *gm_store;
 
@@ -143,7 +143,7 @@ void nemo_module_shutdown(void)
 {
 }
 
-void nemo_module_list_types(const GType ** types, int *num_types)
+void nemo_module_list_types(const GType **types, int *num_types)
 {
     static GType type_list[1];
 

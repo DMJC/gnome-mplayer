@@ -37,5 +37,5 @@
 #include <X11/extensions/scrnsaver.h>
 #endif
 
-gboolean screensaver_disabled;
+static gboolean screensaver_disabled;
 gboolean dbus_hookup(gint windowid, gint controlid);

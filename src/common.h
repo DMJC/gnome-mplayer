@@ -150,8 +150,8 @@ typedef enum {
     QUIT
 } PLAYSTATE;
 
-PLAYSTATE guistate;
-PLAYSTATE lastguistate;
+static PLAYSTATE guistate;
+static PLAYSTATE lastguistate;
 
 typedef struct _IdleData {
     gchar info[1024];
@@ -190,7 +190,7 @@ typedef struct _IdleData {
 #endif
 } IdleData;
 
-IdleData *idledata;
+static IdleData *idledata;
 
 enum {
     ITEM_COLUMN,
@@ -283,10 +283,10 @@ typedef struct _ButtonDef {
 } ButtonDef;
 
 #define METER_BARS 		40
-gint buckets[METER_BARS];
-gint max_buckets[METER_BARS];
-gchar **accel_keys;
-gchar **accel_keys_description;
+static gint buckets[METER_BARS];
+static gint max_buckets[METER_BARS];
+static gchar **accel_keys;
+static gchar **accel_keys_description;
 
 //Define MIME for DnD
 #define DRAG_NAME_0		"text/plain"
@@ -296,158 +296,158 @@ gchar **accel_keys_description;
 #define DRAG_NAME_2		"STRING"
 #define DRAG_INFO_2		2
 
-gint cache_size;
-gint plugin_audio_cache_size;
-gint plugin_video_cache_size;
-gboolean forcecache;
-gint osdlevel;
-gint pplevel;
-gint streaming;
-gboolean showcontrols;
-gboolean showsubtitles;
-gint fullscreen;
-gint init_fullscreen;
-gboolean videopresent;
-gboolean playlist;
-gint embed_window;
-gint window_x;
-gint window_y;
-gint control_id;
-gboolean softvol;
-gboolean remember_softvol;
-gdouble volume_softvol;
-gint volume_gain;
-gint pref_volume;
-gint verbose;
-gint autostart;
-//gint actual_x, actual_y;
-//gint play_x, play_y;
-gint last_window_width, last_window_height;
-//gchar vm[10];
-gchar *vo;
-gchar *option_vo;
-gboolean use_hardware_codecs;
-gboolean use_crystalhd_codecs;
-AudioDevice audio_device;
-gchar *audio_device_name;
-gint audio_channels;
-gboolean use_hw_audio;
-gboolean disable_deinterlace;
-gboolean disable_framedrop;
-gboolean disable_context_menu;
-gboolean disable_fullscreen;
-gboolean disable_pause_on_click;
-gboolean enable_global_menu;
-gboolean enable_nautilus_plugin;
-gint loop;
-gint start_second;
-gint play_length;
-gint random_order;
-gboolean dontplaynext;
-gboolean autopause;
-gchar *path;
-gint js_state;
-gchar *rpconsole;
-gchar *rpcontrols;
-gboolean control_instance;
-gchar *playlistname;
-gboolean ok_to_play;
-gchar *subtitle;
-gchar *alang;
-gchar *slang;
-gchar *metadata_codepage;
-gboolean use_mplayer2;
-gboolean vertical_layout;
-gboolean playlist_visible;
-gboolean details_visible;
-gboolean restore_controls;
-gboolean update_control_flag;
-//gint restore_pane;
-gboolean disable_ass;
-gboolean disable_embeddedfonts;
-gboolean disable_animation;
-gint auto_hide_timeout;
-gboolean always_hide_after_timeout;
-gboolean mouse_over_controls;
-gchar *subtitlefont;
-gdouble subtitle_scale;
-gchar *subtitle_codepage;
-gchar *subtitle_color;
-gboolean subtitle_outline;
-gboolean subtitle_shadow;
-gint subtitle_margin;
-gint subtitle_fuzziness;
-gboolean quit_on_complete;
-gchar *mplayer_bin;
-gchar *mplayer_dvd_device;
-gchar *option_dvd_device;
-gchar *extraopts;
-gboolean resize_on_new_media;
-gboolean single_instance;
-gboolean replace_and_play;
-gboolean bring_to_front;
-gboolean show_notification;
-gboolean show_status_icon;
-gchar *gpod_mount_point;
-gboolean disable_cover_art_fetch;
-//gboolean updating_recent;
-gboolean large_buttons;
-GtkIconSize button_size;
-gboolean skip_fixed_allocation_on_show;
-gboolean skip_fixed_allocation_on_hide;
-gboolean mouse_wheel_changes_volume;
-ResumeMode resume_mode;
+static gint cache_size;
+static gint plugin_audio_cache_size;
+static gint plugin_video_cache_size;
+static gboolean forcecache;
+static gint osdlevel;
+static gint pplevel;
+static gint streaming;
+static gboolean showcontrols;
+static gboolean showsubtitles;
+static gint fullscreen;
+static gint init_fullscreen;
+static gboolean videopresent;
+static gboolean playlist;
+static gint embed_window;
+static gint window_x;
+static gint window_y;
+static gint control_id;
+static gboolean softvol;
+static gboolean remember_softvol;
+static gdouble volume_softvol;
+static gint volume_gain;
+static gint pref_volume;
+static gint verbose;
+static gint autostart;
+//static gint actual_x, actual_y;
+//static gint play_x, play_y;
+static gint last_window_width, last_window_height;
+//static gchar vm[10];
+static gchar *vo;
+static gchar *option_vo;
+static gboolean use_hardware_codecs;
+static gboolean use_crystalhd_codecs;
+static AudioDevice audio_device;
+static gchar *audio_device_name;
+static gint audio_channels;
+static gboolean use_hw_audio;
+static gboolean disable_deinterlace;
+static gboolean disable_framedrop;
+static gboolean disable_context_menu;
+static gboolean disable_fullscreen;
+static gboolean disable_pause_on_click;
+static gboolean enable_global_menu;
+static gboolean enable_nautilus_plugin;
+static gint loop;
+static gint start_second;
+static gint play_length;
+static gint random_order;
+static gboolean dontplaynext;
+static gboolean autopause;
+static gchar *path;
+static gint js_state;
+static gchar *rpconsole;
+static gchar *rpcontrols;
+static gboolean control_instance;
+static gchar *playlistname;
+static gboolean ok_to_play;
+static gchar *subtitle;
+static gchar *alang;
+static gchar *slang;
+static gchar *metadata_codepage;
+static gboolean use_mplayer2;
+static gboolean vertical_layout;
+static gboolean playlist_visible;
+static gboolean details_visible;
+static gboolean restore_controls;
+static gboolean update_control_flag;
+//static gint restore_pane;
+static gboolean disable_ass;
+static gboolean disable_embeddedfonts;
+static gboolean disable_animation;
+static gint auto_hide_timeout;
+static gboolean always_hide_after_timeout;
+static gboolean mouse_over_controls;
+static gchar *subtitlefont;
+static gdouble subtitle_scale;
+static gchar *subtitle_codepage;
+static gchar *subtitle_color;
+static gboolean subtitle_outline;
+static gboolean subtitle_shadow;
+static gint subtitle_margin;
+static gint subtitle_fuzziness;
+static gboolean quit_on_complete;
+static gchar *mplayer_bin;
+static gchar *mplayer_dvd_device;
+static gchar *option_dvd_device;
+static gchar *extraopts;
+static gboolean resize_on_new_media;
+static gboolean single_instance;
+static gboolean replace_and_play;
+static gboolean bring_to_front;
+static gboolean show_notification;
+static gboolean show_status_icon;
+static gchar *gpod_mount_point;
+static gboolean disable_cover_art_fetch;
+//static gboolean updating_recent;
+static gboolean large_buttons;
+static GtkIconSize button_size;
+static gboolean skip_fixed_allocation_on_show;
+static gboolean skip_fixed_allocation_on_hide;
+static gboolean mouse_wheel_changes_volume;
+static ResumeMode resume_mode;
 
-gboolean remember_loc;
-gboolean use_remember_loc;
-gboolean save_loc;
-gint loc_window_x;
-gint loc_window_y;
-gint loc_window_height;
-gint loc_window_width;
-gint loc_panel_position;
-gboolean keep_on_top;
+static gboolean remember_loc;
+static gboolean use_remember_loc;
+static gboolean save_loc;
+static gint loc_window_x;
+static gint loc_window_y;
+static gint loc_window_height;
+static gint loc_window_width;
+static gint loc_panel_position;
+static gboolean keep_on_top;
 
-gboolean cancel_folder_load;
+static gboolean cancel_folder_load;
 
-GThreadPool *retrieve_metadata_pool;
-GMutex *retrieve_mutex;
-GMutex *set_mutex;
+static GThreadPool *retrieve_metadata_pool;
+static GMutex *retrieve_mutex;
+static GMutex *set_mutex;
 
-gboolean use_mediakeys;
-gboolean use_defaultpl;
+static gboolean use_mediakeys;
+static gboolean use_defaultpl;
 
-gboolean qt_disabled;
-gboolean real_disabled;
-gboolean wmp_disabled;
-gboolean dvx_disabled;
-gboolean midi_disabled;
-gboolean embedding_disabled;
-gboolean disable_embedded_scaling;
+static gboolean qt_disabled;
+static gboolean real_disabled;
+static gboolean wmp_disabled;
+static gboolean dvx_disabled;
+static gboolean midi_disabled;
+static gboolean embedding_disabled;
+static gboolean disable_embedded_scaling;
 
-GArray *data;
-GArray *max_data;
-gboolean reading_af_export;
+static GArray *data;
+static GArray *max_data;
+static gboolean reading_af_export;
 
 //gboolean sub_source_file;
 
 // layout variables
-gint non_fs_width;
-gint non_fs_height;
+static gint non_fs_width;
+static gint non_fs_height;
 
 // playlist stuff
-GtkListStore *playliststore;
-GtkTreeIter iter;
-GtkTreeIter *next_iter;
-GtkTreeSelection *selection;
-GtkWidget *list;
+static GtkListStore *playliststore;
+static GtkTreeIter iter;
+static GtkTreeIter *next_iter;
+static GtkTreeSelection *selection;
+static GtkWidget *list;
 
 // preference store
-GmPrefStore *gm_store;
-GmPrefStore *gmp_store;
+static GmPrefStore *gm_store;
+static GmPrefStore *gmp_store;
 
 // cover
-gchar *cover_art_uri;
+static gchar *cover_art_uri;
 
 GtkWidget *create_window(gint windowid);
 void show_window(gint windowid);
@@ -523,18 +523,17 @@ void set_media_player_attributes(GtkWidget * widget);
 
 void retrieve_metadata(gpointer data, gpointer user_data);
 
-gchar *default_playlist;
-gboolean safe_to_save_default_playlist;
-
+static gchar *default_playlist;
+static gboolean safe_to_save_default_playlist;
 gboolean async_play_iter(void *data);
 
 #ifdef GTK2_12_ENABLED
-GtkRecentManager *recent_manager;
+static GtkRecentManager *recent_manager;
 void recent_manager_changed_callback(GtkRecentManager * recent_manager, gpointer data);
 #endif
 
 #ifdef LIBGDA_ENABLED
-GdaConnection *db_connection;
+static GdaConnection *db_connection;
 #endif
 
 #endif                          /* _COMMON_H */

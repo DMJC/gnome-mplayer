@@ -20,7 +20,7 @@
 #define GLIB2_24_ENABLED 1
 
 /* Define to 1 if you have gpod support */
-/* #undef GPOD_ENABLED */
+#define GPOD_ENABLED 1
 
 /* Define to 1 if you have GTK 2.12 or higher */
 #define GTK2_12_ENABLED 1
@@ -49,6 +49,14 @@
 /* Define to 1 if you have the `bind_textdomain_codeset' function. */
 #define HAVE_BIND_TEXTDOMAIN_CODESET 1
 
+/* Define to 1 if you have the Mac OS X function CFLocaleCopyCurrent in the
+   CoreFoundation framework. */
+/* #undef HAVE_CFLOCALECOPYCURRENT */
+
+/* Define to 1 if you have the Mac OS X function CFPreferencesCopyAppValue in
+   the CoreFoundation framework. */
+/* #undef HAVE_CFPREFERENCESCOPYAPPVALUE */
+
 /* Define to 1 if you have the `dcgettext' function. */
 #define HAVE_DCGETTEXT 1
 
@@ -67,9 +75,6 @@
 /* Define to 1 if you have the <locale.h> header file. */
 #define HAVE_LOCALE_H 1
 
-/* Define to 1 if you have the <memory.h> header file. */
-#define HAVE_MEMORY_H 1
-
 /* Define to 1 if you have the <mntent.h> header file. */
 #define HAVE_MNTENT_H 1
 
@@ -87,6 +92,9 @@
 
 /* Define to 1 if you have the <stdint.h> header file. */
 #define HAVE_STDINT_H 1
+
+/* Define to 1 if you have the <stdio.h> header file. */
+#define HAVE_STDIO_H 1
 
 /* Define to 1 if you have the <stdlib.h> header file. */
 #define HAVE_STDLIB_H 1
@@ -113,7 +121,7 @@
 #define HAVE_UNISTD_H 1
 
 /* When defined database access is enabled */
-/* #undef LIBGDA_ENABLED */
+#define LIBGDA_ENABLED 1
 
 /* Define to 1 if you have musicbrainz3 support */
 /* #undef MUSICBRAINZ_ENABLED */
@@ -123,9 +131,6 @@
 
 /* Define to 1 if you have NOTIFY support */
 #define NOTIFY_ENABLED 1
-
-/* Define to 1 if your C compiler doesn't accept -c and -o together. */
-/* #undef NO_MINUS_C_MINUS_O */
 
 /* Define if we are on win32 */
 /* #undef OS_WIN32 */
@@ -151,7 +156,9 @@
 /* Define to the version of this package. */
 #define PACKAGE_VERSION ""
 
-/* Define to 1 if you have the ANSI C header files. */
+/* Define to 1 if all of the C90 standard headers exist (not just the ones
+   required in a freestanding environment). This macro is provided for
+   backward compatibility; new code need not use it. */
 #define STDC_HEADERS 1
 
 /* Version number of package */

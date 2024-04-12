@@ -29,7 +29,7 @@
 #include <gmlib.h>
 
 
-void strip_unicode(gchar * data, gsize len)
+void strip_unicode(gchar *data, gsize len)
 {
     gsize i = 0;
 
@@ -64,7 +64,7 @@ gchar *seconds_to_string(gfloat seconds)
     return g_strstrip(result);
 }
 
-MetaData *get_metadata(gchar * filename)
+MetaData *get_metadata(gchar *filename)
 {
     GError *error;
     gint exit_status;
@@ -221,7 +221,7 @@ MetaData *get_metadata(gchar * filename)
 }
 
 
-gboolean get_properties(GtkWidget * page, gchar * uri)
+gboolean get_properties(GtkWidget *page, gchar *uri)
 {
     GtkWidget *label;
     gint i = 0;

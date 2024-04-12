@@ -62,7 +62,7 @@ indent -kr -l100 -i4 -nut
 
 #ifdef DBUS_ENABLED
 
-static DBusHandlerResult filter_func(DBusConnection * connection, DBusMessage * message, void *user_data)
+static DBusHandlerResult filter_func(DBusConnection *connection, DBusMessage *message, void *user_data)
 {
 
     //const gchar *sender;
@@ -863,7 +863,7 @@ static DBusHandlerResult filter_func(DBusConnection * connection, DBusMessage * 
 }
 #endif
 
-void dbus_open_by_hrefid(gchar * hrefid)
+void dbus_open_by_hrefid(gchar *hrefid)
 {
 #ifdef DBUS_ENABLED
     gchar *path;
@@ -901,7 +901,7 @@ void dbus_open_next()
 #endif
 }
 
-void dbus_open(gchar * arg)
+void dbus_open(gchar *arg)
 {
 #ifdef DBUS_ENABLED
     gchar *path;
@@ -925,7 +925,7 @@ void dbus_open(gchar * arg)
 #endif
 }
 
-void dbus_set_playlist_name(gchar * arg)
+void dbus_set_playlist_name(gchar *arg)
 {
 #ifdef DBUS_ENABLED
     gchar *path;
@@ -964,7 +964,7 @@ void dbus_cancel()
 #endif
 }
 
-void dbus_send_rpsignal(gchar * signal)
+void dbus_send_rpsignal(gchar *signal)
 {
 #ifdef DBUS_ENABLED
     gchar *path;
@@ -989,7 +989,7 @@ void dbus_send_rpsignal(gchar * signal)
 #endif
 }
 
-void dbus_send_rpsignal_with_int(gchar * signal, int value)
+void dbus_send_rpsignal_with_int(gchar *signal, int value)
 {
 #ifdef DBUS_ENABLED
     gchar *path;
@@ -1014,7 +1014,7 @@ void dbus_send_rpsignal_with_int(gchar * signal, int value)
 #endif
 }
 
-void dbus_send_rpsignal_with_double(gchar * signal, gdouble value)
+void dbus_send_rpsignal_with_double(gchar *signal, gdouble value)
 {
 #ifdef DBUS_ENABLED
     gchar *path;
@@ -1039,7 +1039,7 @@ void dbus_send_rpsignal_with_double(gchar * signal, gdouble value)
 #endif
 }
 
-void dbus_send_rpsignal_with_string(gchar * signal, gchar * value)
+void dbus_send_rpsignal_with_string(gchar *signal, gchar *value)
 {
 #ifdef DBUS_ENABLED
     gchar *path;
@@ -1083,7 +1083,7 @@ void dbus_reload_plugins()
 #endif
 }
 
-void dbus_send_event(gchar * event, gint button)
+void dbus_send_event(gchar *event, gint button)
 {
 #ifdef DBUS_ENABLED
     gchar *path;
@@ -1109,7 +1109,7 @@ void dbus_send_event(gchar * event, gint button)
 #endif
 }
 
-gboolean GetProperty(gchar * property)
+gboolean GetProperty(gchar *property)
 {
 
     return TRUE;

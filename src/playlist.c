@@ -66,7 +66,7 @@ void update_gui()
 
 }
 
-gboolean playlist_popup_handler(GtkWidget * widget, GdkEvent * event, void *data)
+gboolean playlist_popup_handler(GtkWidget *widget, GdkEvent *event, void *data)
 {
     GtkMenu *menu;
     GdkEventButton *event_button;
@@ -87,7 +87,7 @@ gboolean playlist_popup_handler(GtkWidget * widget, GdkEvent * event, void *data
     return FALSE;
 }
 
-gboolean button_release_callback(GtkWidget * widget, GdkEvent * event, gpointer data)
+gboolean button_release_callback(GtkWidget *widget, GdkEvent *event, gpointer data)
 {
     GtkTreePath *path;
     // GtkTreeSelection *sel;
@@ -125,7 +125,7 @@ gboolean button_release_callback(GtkWidget * widget, GdkEvent * event, gpointer 
     return FALSE;
 }
 
-void playlist_set_subtitle_callback(GtkMenuItem * menuitem, void *data)
+void playlist_set_subtitle_callback(GtkMenuItem *menuitem, void *data)
 {
     GtkTreeSelection *sel;
     GtkTreeView *view = (GtkTreeView *) data;
@@ -162,7 +162,7 @@ void playlist_set_subtitle_callback(GtkMenuItem * menuitem, void *data)
 
 }
 
-void playlist_set_audiofile_callback(GtkMenuItem * menuitem, void *data)
+void playlist_set_audiofile_callback(GtkMenuItem *menuitem, void *data)
 {
     GtkTreeSelection *sel;
     GtkTreeView *view = (GtkTreeView *) data;
@@ -200,8 +200,8 @@ void playlist_set_audiofile_callback(GtkMenuItem * menuitem, void *data)
 }
 
 
-gboolean playlist_drop_callback(GtkWidget * widget, GdkDragContext * dc,
-                                gint x, gint y, GtkSelectionData * selection_data, guint info, guint t, gpointer data)
+gboolean playlist_drop_callback(GtkWidget *widget, GdkDragContext *dc,
+                                gint x, gint y, GtkSelectionData *selection_data, guint info, guint t, gpointer data)
 {
     gchar **list;
     gint i = 0;
@@ -267,7 +267,7 @@ gboolean playlist_drop_callback(GtkWidget * widget, GdkDragContext * dc,
     return FALSE;
 }
 
-gboolean playlist_motion_callback(GtkWidget * widget, GdkEventMotion * event, gpointer user_data)
+gboolean playlist_motion_callback(GtkWidget *widget, GdkEventMotion *event, gpointer user_data)
 {
     GtkTreePath *localpath;
     GtkTreeIter localiter;
@@ -301,7 +301,7 @@ gboolean playlist_motion_callback(GtkWidget * widget, GdkEventMotion * event, gp
 
 }
 
-gboolean playlist_enter_callback(GtkWidget * widget, GdkEventMotion * event, gpointer user_data)
+gboolean playlist_enter_callback(GtkWidget *widget, GdkEventMotion *event, gpointer user_data)
 {
     gtk_tree_view_set_enable_search(GTK_TREE_VIEW(list), TRUE);
     gtk_tree_view_set_search_column(GTK_TREE_VIEW(list), DESCRIPTION_COLUMN);
@@ -310,7 +310,7 @@ gboolean playlist_enter_callback(GtkWidget * widget, GdkEventMotion * event, gpo
     return TRUE;
 }
 
-gboolean playlist_leave_callback(GtkWidget * widget, GdkEventMotion * event, gpointer user_data)
+gboolean playlist_leave_callback(GtkWidget *widget, GdkEventMotion *event, gpointer user_data)
 {
     gtk_tree_view_set_enable_search(GTK_TREE_VIEW(list), FALSE);
     gtk_widget_grab_focus(play_event_box);
@@ -318,7 +318,7 @@ gboolean playlist_leave_callback(GtkWidget * widget, GdkEventMotion * event, gpo
     return TRUE;
 }
 
-void save_playlist(GtkWidget * widget, void *data)
+void save_playlist(GtkWidget *widget, void *data)
 {
     GtkWidget *dialog;
     gchar *uri;
@@ -378,7 +378,7 @@ void save_playlist(GtkWidget * widget, void *data)
 
 }
 
-void load_playlist(GtkWidget * widget, void *data)
+void load_playlist(GtkWidget *widget, void *data)
 {
     GtkWidget *dialog;
     gchar *filename;
@@ -545,7 +545,7 @@ void add_folder_to_playlist_callback(gpointer data, gpointer user_data)
 #endif
 }
 
-void add_to_playlist(GtkWidget * widget, void *data)
+void add_to_playlist(GtkWidget *widget, void *data)
 {
 
     GtkWidget *dialog;
@@ -608,7 +608,7 @@ void add_to_playlist(GtkWidget * widget, void *data)
     gtk_widget_destroy(dialog);
 }
 
-void add_folder_to_playlist(GtkWidget * widget, void *data)
+void add_folder_to_playlist(GtkWidget *widget, void *data)
 {
 
     GtkWidget *dialog;
@@ -667,7 +667,7 @@ void add_folder_to_playlist(GtkWidget * widget, void *data)
     }
 }
 
-void remove_from_playlist(GtkWidget * widget, gpointer data)
+void remove_from_playlist(GtkWidget *widget, gpointer data)
 {
     GtkTreeSelection *sel;
     GtkTreeView *view = (GtkTreeView *) data;
@@ -697,7 +697,7 @@ void remove_from_playlist(GtkWidget * widget, gpointer data)
 
 }
 
-void clear_playlist(GtkWidget * widget, void *data)
+void clear_playlist(GtkWidget *widget, void *data)
 {
 
     dontplaynext = TRUE;
@@ -708,7 +708,7 @@ void clear_playlist(GtkWidget * widget, void *data)
     gtk_widget_set_sensitive(GTK_WIDGET(menuitem_edit_loop), FALSE);
 }
 
-void move_item_up(GtkWidget * widget, void *data)
+void move_item_up(GtkWidget *widget, void *data)
 {
     GtkTreeSelection *sel;
     GtkTreeIter localiter, a, b;
@@ -745,7 +745,7 @@ void move_item_up(GtkWidget * widget, void *data)
     }
 }
 
-void move_item_down(GtkWidget * widget, void *data)
+void move_item_down(GtkWidget *widget, void *data)
 {
     GtkTreeSelection *sel;
     GtkTreeIter localiter, a, b;
@@ -783,7 +783,7 @@ void move_item_down(GtkWidget * widget, void *data)
 
 }
 
-gboolean playlist_select_callback(GtkTreeView * view, GtkTreePath * path, GtkTreeViewColumn * column, gpointer data)
+gboolean playlist_select_callback(GtkTreeView *view, GtkTreePath *path, GtkTreeViewColumn *column, gpointer data)
 {
 
     if (gtk_tree_model_get_iter(GTK_TREE_MODEL(playliststore), &iter, path)) {
@@ -794,23 +794,23 @@ gboolean playlist_select_callback(GtkTreeView * view, GtkTreePath * path, GtkTre
     return FALSE;
 }
 
-void playlist_close(GtkWidget * widget, void *data)
+void playlist_close(GtkWidget *widget, void *data)
 {
     gtk_check_menu_item_set_active(GTK_CHECK_MENU_ITEM(menuitem_view_playlist), FALSE);
 }
 
-void repeat_callback(GtkWidget * widget, void *data)
+void repeat_callback(GtkWidget *widget, void *data)
 {
     gtk_check_menu_item_set_active(GTK_CHECK_MENU_ITEM(menuitem_edit_loop), !loop);
 }
 
-void shuffle_callback(GtkWidget * widget, void *data)
+void shuffle_callback(GtkWidget *widget, void *data)
 {
     gtk_check_menu_item_set_active(GTK_CHECK_MENU_ITEM(menuitem_edit_random),
                                    !gtk_check_menu_item_get_active(GTK_CHECK_MENU_ITEM(menuitem_edit_random)));
 }
 
-void menuitem_view_playlist_callback(GtkMenuItem * menuitem, void *data)
+void menuitem_view_playlist_callback(GtkMenuItem *menuitem, void *data)
 {
     static gboolean old_resize_on_new_media;
 
@@ -828,7 +828,7 @@ void menuitem_view_playlist_callback(GtkMenuItem * menuitem, void *data)
     g_idle_add(set_adjust_layout, idledata);
 }
 
-void undo_playlist_sort(GtkWidget * widget, void *data)
+void undo_playlist_sort(GtkWidget *widget, void *data)
 {
     gtk_tree_sortable_set_sort_column_id(GTK_TREE_SORTABLE(playliststore), PLAY_ORDER_COLUMN, GTK_SORT_ASCENDING);
 }

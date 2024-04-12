@@ -30,7 +30,7 @@
 
 static DBusConnection *mpris_connection = NULL;
 
-void append_metadata_array(DBusMessageIter * messageIter)
+void append_metadata_array(DBusMessageIter *messageIter)
 {
     DBusMessageIter array, dict, dict_entry, dict_val, variant_array;
     gchar *property;
@@ -172,7 +172,7 @@ void append_metadata_array(DBusMessageIter * messageIter)
     dbus_message_iter_close_container(messageIter, &array);
 }
 
-static DBusHandlerResult mpris_filter_func(DBusConnection * mpris_connection, DBusMessage * message, void *user_data)
+static DBusHandlerResult mpris_filter_func(DBusConnection *mpris_connection, DBusMessage *message, void *user_data)
 {
 
     //const gchar *sender;
