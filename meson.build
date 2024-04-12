@@ -264,8 +264,7 @@ sources = [
 #          'src/database.h'
 ]
 
-bin_dir = join_paths('prefix', 'bin')
-executable('gnome-mplayer', sources, dependencies: [math, x11, gtk, gmlib, gmtk, gio, dbus, dbus_glib1, glib, alsa, pulse, notify, notify_7, gpod7, musicbrainz5, xscrnsaver, libgda5], install_dir: bin_dir)
+executable('gnome-mplayer', sources, dependencies: [math, x11, gtk, gmlib, gmtk, gio, dbus, dbus_glib1, glib, alsa, pulse, notify, notify_7, gpod7, musicbrainz5, xscrnsaver, libgda5], install: true, install_dir: 'bin')
 
 schema_data = [
   'apps.gecko-mediaplayer.preferences.gschema.xml',
@@ -274,6 +273,27 @@ schema_data = [
 
 schema_dir = join_paths(get_option('prefix'), get_option('datadir'), 'glib-2.0', 'schemas')
 install_data(schema_data, install_dir: schema_dir)
+
+i18n = import('i18n')
+
+i18n.merge_file(
+  input: 'gnome-mplayer.desktop.in',
+  output: 'gnome-mplayer.desktop',
+  type: 'desktop',
+  po_dir: 'po',
+  install: true,
+  install_dir: get_option('datadir') / 'applications'
+)
+
+#i18n.merge_file(
+#  input: 'gnome-mplayer.xml.in',
+#  output: 'gnome-mplayer.xml',
+#  po_dir: 'po',
+#  install: true,
+#  install_dir: get_option('datadir') / 'appdata'
+#)
+
+
 
 #glib2,
 #glib2_24,
